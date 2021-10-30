@@ -1,9 +1,10 @@
 #include <stdio.h>
 
+//回文数
+
 int reNum(int temp);
 
 int main() {
-    //回文数
     int a;
     printf("请输入一个数字：");
     scanf("%d", &a);
