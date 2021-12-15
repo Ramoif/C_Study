@@ -5,28 +5,6 @@
 #include "stdio.h"
 //string.h头文件来使用判断长度
 #include "string.h"
-
-/*回文字符串*/
-
-
-/*//方法1 大失败
-int huiwen(char *str) {
-    int length = strlen(str);
-    char str2[length];
-    printf("字符串长度为：%d\n", length);
-    for (int i = 0; i <= length; i++) {
-        str2[i] = str[length - i];
-    }
-    printf("str2 = %s\n", str2);
-    if (strcmp(str, str2) == 0) {
-        printf("是回文！\n");
-        return 1;
-    } else {
-        printf("不是回文。\n");
-        return 0;
-    }
-}*/
-
 // 方法2 无需string.h
 int huiwen2(char *str) {
     int i = 0, j = 0;

@@ -21,6 +21,12 @@ typedef struct {
 } SqList2;
 
 
+void swap(int *a, int *b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
 //测试helloworld
 void method1() {
     printf("方法测试1");
@@ -77,7 +83,7 @@ void ListInsert1(SqList2 *L, int i, int e) {
 
 
 //指针测试21.12.14
-void testNode() {
+void testNode1214_1() {
     int init = 0;
     int init2 = 0;
     int a = 10;
@@ -105,7 +111,7 @@ void testNode() {
     printf("此时的init2数值为：%p,%d\n\n", &init2, init2);
 }
 
-void testNode2() {
+void testNode1214_2() {
     int init = 0;
     int a = 10;
     int *p = &init;
@@ -117,23 +123,52 @@ void testNode2() {
 
 }
 
+
+//计算s所指字符串长度
+int stringLength(char *s) {
+    char *t = s;
+    printf("%s\n", t);
+    while (*t) {
+        t++;
+    }
+    printf("%s\n", s);
+    printf("%s\n", t);
+    printf("t=%p,s=%p,t-s=%d\n", t, s, t - s);
+    return (t - s);
+}
+
+//测试指针传值
+void test121501() {
+    int n1 = 1, n2, *p = &n2, *q = &n1;
+    printf("n1地址为%p,p数值为%d.\n", &n1, n1);
+    printf("n2地址为%p,q数值为%d.\n", &n2, n2);
+    printf("&p,[p]地址为%p,%p,p数值为%d.\n", &p, p, *p);
+    printf("&q,[q]地址为%p,%p,q数值为%d.\n", &q, q, *q);
+    printf("\n");
+    *p = *q;
+    printf("n1地址为%p,p数值为%d.\n", &n1, n1);
+    printf("n2地址为%p,q数值为%d.\n", &n2, n2);
+    printf("&p,[p]地址为%p,%p,p数值为%d.\n", &p, p, *p);
+    printf("&q,[q]地址为%p,%p,q数值为%d.\n", &q, q, *q);
+    /*n1地址为000000000061FDEC,p数值为1.
+    n2地址为000000000061FDE8,q数值为0.
+    &p,[p]地址为000000000061FDE0,000000000061FDE8,p数值为0.
+    &q,[q]地址为000000000061FDD8,000000000061FDEC,q数值为1.
+
+    n1地址为000000000061FDEC,p数值为1.
+    n2地址为000000000061FDE8,q数值为1.
+    &p,[p]地址为000000000061FDE0,000000000061FDE8,p数值为1.
+    &q,[q]地址为000000000061FDD8,000000000061FDEC,q数值为1.*/
+}
+
 /*测试主函数*/
 int main() {
     //测试区域
 
-    /*method3();
 
-    char *s = "\ta\017bc";
+    test121501();
 
-    SqList2 list;
-    InitList2(&list);
-    ListInsert1(&list, 1, 1);
-    ListInsert1(&list, 2, 2);
-    ListInsert1(&list, 3, 3);
-    for (int i = 0; i < list.length; ++i) {
-        printf("data[%d]=%d\n", i, list.data[i]);
-    }*/
-    testNode();
+
 
     //上为测试区域
     return 0;
