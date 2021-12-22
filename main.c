@@ -161,12 +161,33 @@ void test121501() {
     &q,[q]地址为000000000061FDD8,000000000061FDEC,q数值为1.*/
 }
 
+//,
+void test1220() {
+    int x = 1, y = 2, w = 3, z = 0;
+    z = (x, y, w);
+    printf("%d,%d,%d,%d", x, y, w, z);
+
+    int a = 3;
+    printf("%d", (a += a -= a * a));
+}
+
+void test1220_2() {
+
+    int a[4][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, (*prt)[3] = a, *p = a[0];
+    int i;
+    for (i = 0; i < 12; i++){
+        printf("%d ", *(*prt + i));
+    }
+    printf("\n%d ", *(*prt + 5));
+
+}
+
 /*测试主函数*/
 int main() {
     //测试区域
 
 
-    test121501();
+    test1220_2();
 
 
 
