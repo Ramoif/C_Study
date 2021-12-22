@@ -40,9 +40,6 @@ int main() {
         printf("%d ", number[i]);
     }
 
-
-
-
     /*int num[N] = {};
     printf("请输入%d个数字排序。\n",N);
     for (int i = 0; i < N; ++i) {
